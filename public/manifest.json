@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Markdown Image Code Display",
+  "version": "0.1.0",
+  "description": "Extract and display image codes from markdown articles, enabling u to update your tech blog conveniently",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Markdown Image Code Display"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "contextMenus"
+  ],
+  "icons": {
+    "16": "markdown16.png",
+    "48": "markdown48.png",
+    "128": "markdown128.png"
+  }
+}
