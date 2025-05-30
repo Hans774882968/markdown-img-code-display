@@ -3,18 +3,22 @@ import { persist } from 'zustand/middleware';
 
 interface ThemeState {
   theme: 'light' | 'dark';
-  editorTheme: string;
+  lightEditorTheme: string;
+  darkEditorTheme: string;
   setTheme: (theme: 'light' | 'dark') => void;
-  setEditorTheme: (theme: string) => void;
+  setLightEditorTheme: (theme: string) => void;
+  setDarkEditorTheme: (theme: string) => void;
 }
 
 export const useThemeStore = create<ThemeState>()(
   persist(
     (set) => ({
       theme: 'dark',
-      editorTheme: 'github-dark',
+      lightEditorTheme: 'github-light',
+      darkEditorTheme: 'github-dark',
       setTheme: (theme) => set({ theme }),
-      setEditorTheme: (editorTheme) => set({ editorTheme }),
+      setLightEditorTheme: (lightEditorTheme) => set({ lightEditorTheme }),
+      setDarkEditorTheme: (darkEditorTheme) => set({ darkEditorTheme }),
     }),
     {
       name: 'theme-storage',
